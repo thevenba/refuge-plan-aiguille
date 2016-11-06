@@ -1,0 +1,209 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 mai 2016, 21:39:01
+    Author     : DraikkaiZ
+*/
+
+nav {
+    display: block;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav > li > a, .nav > li > button {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav > li > button:hover,
+.nav > li > button:focus {
+  text-decoration: none;
+  /*background-color: #eee;*/
+}
+.nav > li.disabled > a, .nav > li.disabled > button {
+  color: #777;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus, 
+.nav > li.disabled > button:hover,
+.nav > li.disabled > button:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus,
+.nav .open > button,
+.nav .open > button:hover,
+.nav .open > button:focus {
+  /*background-color: #eee;*/
+  /*border-color: #337ab7;*/
+}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.nav > li > a > img, .nav > li > button > img {
+  max-width: none;
+}
+.nav-tabs {
+  /*border-bottom: 2px solid #ddd;*/
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > li > a, .nav-tabs > li > button {
+  /*margin-right: 2px;*/
+  line-height: 1.42857143;
+  color: #39454B;
+  background-color: #B2FF59;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+  /*border: 2px solid transparent;*/
+}
+.nav-tabs > li > a:hover, .nav-tabs > li > button:hover {
+  /*border-color: #eee #eee #ddd;*/
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.6);
+  background-color: #CCFF90;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > button,
+.nav-tabs > li.active > button:hover,
+.nav-tabs > li.active > button:focus {
+  /*color: #555;*/
+  cursor: default;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.8) inset;
+  /*background-color: #fff;*/
+  /*border: 2px solid #ddd;*/
+  /*border-bottom-color: transparent;*/
+}
+.nav-tabs.nav-justified {
+  width: 100%;
+  /*border-bottom: 0;*/
+}
+.nav-tabs.nav-justified > li {
+  float: none;
+}
+.nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > li > button {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > li > button {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > li > button {
+  margin-right: 0;
+  /*border-radius: 4px;*/
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus, 
+.nav-tabs.nav-justified > .active > button,
+.nav-tabs.nav-justified > .active > button:hover,
+.nav-tabs.nav-justified > .active > button:focus {
+  /*border: 2px solid #ddd;*/
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > li > button {
+/*    border-bottom: 2px solid #ddd;
+    border-radius: 4px 4px 0 0;*/
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus,
+  .nav-tabs.nav-justified > .active > button,
+  .nav-tabs.nav-justified > .active > button:hover,
+  .nav-tabs.nav-justified > .active > button:focus {
+    /*border-bottom-color: #fff;*/
+  }
+}
+
+.tab-content {
+    box-shadow: 0 2px 4px black inset;
+    margin-top: -1px;
+    padding: 6px;
+}
+.tab-content > .tab-pane {
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  /*border-top-left-radius: 0;*/
+  /*border-top-right-radius: 0;*/
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .50s linear;
+       -o-transition: opacity .50s linear;
+          transition: opacity .50s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.button-reset {
+    moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: initial;
+    border: initial;
+    border-radius: initial;
+    color: initial;
+    cursor: pointer;
+    display: initial;
+    height: 3.5em;
+    line-height: initial;
+    outline: initial;
+    padding: initial;
+    position: initial;
+    text-align: initial;
+    text-decoration: initial;
+    font-weight: 700;
+}
+
+.button-reset:active, .button-reset:hover {
+    /*background-color: initial;*/
+}
+
+/*@media screen and (max-width: 736px) {
+    .nav-tabs {
+        display: -webkit-box;
+    }
+}*/

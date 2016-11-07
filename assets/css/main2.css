@@ -765,4 +765,12 @@ section {
     #section-contact iframe {
         height: 300px;
     }
+    
+    #lightbox {
+        padding-top: 50px;
+    }
+    
+    .w3-modal-content {
+        width: 700px;
+    }
 }

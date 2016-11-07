@@ -46,7 +46,7 @@
         <header id="header" class="alt">
             <!-- Nav -->
             <nav id="nav" class="w3-top">
-                <ul class="w3-navbar w3-theme w3-card-8 w3-xlarge">
+                <ul class="w3-navbar w3-theme w3-xlarge">
                     <li id="logo"><a class="w3-hover-none" href="http://refuge-plan-aiguille.com">Refuge du Plan de l'Aiguille</a></li>
                     <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
                     <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
@@ -952,8 +952,10 @@
                                         $(window).scroll(function () {
                                             if ($(document).scrollTop() > $("#section-about").offset().top - 53) {
                                                 $("#header").removeClass("alt");
+                                                $("#nav").addClass("w3-card-8");
                                             } else {
                                                 $("#header").addClass("alt");
+                                                $("#nav").removeClass("w3-card-8");
                                             }
                                             
                                             if ($(document).scrollTop() > $("#section-about").offset().top / 2) {

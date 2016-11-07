@@ -111,7 +111,7 @@ section {
 }
 
 #nav {
-    z-index: 99;
+    z-index: 2;
     font-family: 'Lobster', sans-serif;
     letter-spacing: 1px;
 }
@@ -440,6 +440,7 @@ section {
     z-index: 5;
     display: inline-block;
 }
+
 .carousel-control.left > i {
     left: 50%;
     margin-left: -10px;

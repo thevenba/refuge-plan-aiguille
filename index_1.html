@@ -47,16 +47,34 @@
             <!-- Nav -->
             <nav id="nav" class="w3-top">
                 <ul class="w3-navbar w3-theme w3-xlarge">
+                    <li class="w3-hide-medium w3-hide-large w3-opennav">
+                        <a id="open-nav" href="javascript:void(0);" onclick="openNav()">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </a>
+                    </li>
                     <li id="logo"><a class="w3-hover-none" href="http://refuge-plan-aiguille.com">Refuge du Plan de l'Aiguille</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-menu">Menu</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-about">A propos</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="#section-intro"><i class="fa fa-home"></i></a>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com">FR</a></li>
-                    <li class="w3-right"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com/en">EN</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="#section-menu">Menu</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="#section-about">A propos</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="#section-intro"><i class="fa fa-home"></i></a>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com">FR</a></li>
+                    <li class="w3-right w3-hide-small"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com/en">EN</a></li>
                 </ul>
             </nav>
+            <div id="sidenav" class="w3-hide-large w3-hide-medium">
+                <ul class="w3-navbar w3-large w3-theme">
+                    <li><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com/en">EN</a></li>
+                    <li><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com">FR</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-intro"><i class="fa fa-home"></i></a>
+                    <li><a class="w3-hover-theme-dark" href="#section-about">A propos</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-menu">Menu</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
+                </ul>
+            </div>
         </header>
 
         <!-- Intro -->
@@ -959,25 +977,25 @@
                                                 $("#header").addClass("alt");
                                                 $("#nav").removeClass("w3-card-8");
                                             }
-                                            
+
                                             if ($(document).scrollTop() > $("#section-about").offset().top / 2) {
                                                 $("#section-intro > div").addClass("hidden");
                                             } else {
                                                 $("#section-intro > div").removeClass("hidden");
                                             }
-                                            
+
                                             if ($(document).scrollTop() < $("#section-about").offset().top / 2 || $(document).scrollTop() > $("#section-about").offset().top + $("#section-about").offset().top / 2) {
                                                 $("#section-about > div").addClass("hidden");
                                             } else {
                                                 $("#section-about > div").removeClass("hidden");
                                             }
-                                            
+
                                             if ($(document).scrollTop() < $("#section-about").offset().top + $("#section-about").offset().top / 2 || $(document).scrollTop() > $("#section-menu").offset().top + $("#section-about").offset().top / 2) {
                                                 $("#section-menu > div").addClass("hidden");
                                             } else {
                                                 $("#section-menu > div").removeClass("hidden");
                                             }
-                                            
+
                                             if ($(document).scrollTop() < $("#section-menu").offset().top + $("#section-about").offset().top / 2) {
                                                 $("#section-gallery > div").addClass("hidden-bottom");
                                             } else if ($(document).scrollTop() > $("#section-gallery").offset().top + $("#section-about").offset().top / 2) {
@@ -986,24 +1004,43 @@
                                                 $("#section-gallery > div").removeClass("hidden-bottom");
                                                 $("#section-gallery > div").removeClass("hidden-top");
                                             }
-                                            
+
                                             if ($(document).scrollTop() < $("#section-gallery").offset().top + $("#section-about").offset().top / 2) {
                                                 $("#section-contact > div").addClass("hidden");
                                             } else {
                                                 $("#section-contact > div").removeClass("hidden");
                                             }
                                         });
-                                        
+
                                         $('#section-intro').parallax("center", 0.1, true);
                                         $('#section-about').parallax("center", 0.4, true);
                                         $('#section-menu').parallax("center", 0.2, true);
                                         $('#section-gallery').parallax("center", 0.1, true);
                                     });
-                                    
+
                                     $('.carousel').carousel();
-                                    
-                                    
+
+
         </script>
+        <script>
+            function openNav() {
+                var x = document.getElementById("sidenav");
+                var openNav = document.getElementById("open-nav");
+                console.log(openNav.firstElementChild);
+                if (x.className.indexOf("show") == -1) {
+                    x.className += " show";
+                    openNav.firstElementChild.style.transform = "translateY(8px) rotate(45deg)";
+                    openNav.children[1].style.opacity = "0";
+                    openNav.lastElementChild.style.transform = "translateY(-8px) rotate(-45deg)";
+                } else {
+                    x.className = x.className.replace(" show", "");
+                    openNav.firstElementChild.style.transform = "rotate(0deg)";
+                    openNav.children[1].style.opacity = "1";
+                    openNav.lastElementChild.style.transform = "rotate(0deg)";
+                }
+            }
+        </script>
+
         <script>
             function openModal() {
                 document.getElementById('lightbox').style.display = "block";

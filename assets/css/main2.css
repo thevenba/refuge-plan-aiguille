@@ -96,20 +96,6 @@ section {
     text-shadow: 0 8px 16px rgba(0,0,0,0.2),0 6px 20px rgba(0,0,0,0.19);
 }
 
-#header.alt ul {
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-#header.alt a {
-    transition: text-shadow .5s;
-}
-
-#header.alt a:hover {
-    background-color: transparent !important;
-    text-shadow: 0 8px 16px rgba(0,0,0,0.2),0 6px 20px rgba(0,0,0,0.19);
-}
-
 #nav {
     z-index: 2;
     font-family: 'Lobster', sans-serif;
@@ -685,7 +671,7 @@ section {
 
 #section-gallery #gallery {
     margin: 0 -16px 16px -16px;
-    
+
 }
 
 #section-gallery #gallery > div {
@@ -748,29 +734,110 @@ section {
     #section-intro > div {
         width: 75%;
     }
-    
+
     .restaurant-menu-list > li {
         margin-bottom: 16px;
         font-size: smaller;
     }
-    
+
     #section-gallery > div {
         width: 41%;
     }
-    
+
     #section-contact > div {
         font-size: smaller;
     }
-    
+
     #section-contact iframe {
         height: 300px;
     }
-    
+
     #lightbox {
         padding-top: 50px;
     }
-    
+
     .w3-modal-content {
         width: 700px;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    #header.alt ul {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    #header.alt a {
+        transition: text-shadow .5s;
+    }
+
+    #header.alt a:hover {
+        background-color: transparent !important;
+        text-shadow: 0 8px 16px rgba(0,0,0,0.2),0 6px 20px rgba(0,0,0,0.19);
+    }
+}
+
+@media screen and (max-width: 993px) {
+    header #nav {
+        box-shadow: none !important;
+    }
+    
+    .w3-opennav:hover {
+        opacity: 1;
+    }
+    
+    #open-nav {
+        margin-top: 4px;
+    }
+    
+    #open-nav:hover {
+        background-color: transparent;
+        color: #fff;
+    }
+    
+    #open-nav div {
+        background-color: #fff;
+        border-radius: 1px;
+        height: 4px;
+        width: 25px;
+        margin: 4px;
+        transition: transform .2s ease;
+    }
+    
+    #open-nav:hover div:nth-child(1) {
+       transform: translateY(3px);
+    }
+    
+    #open-nav:hover div:nth-child(3) {
+       transform: translateY(-3px);
+    }
+    
+    #sidenav {
+        width: 100%;
+        margin-top: -245px;
+        position: fixed;
+        z-index: 1;
+        transition: all .3s ease-in-out;
+    }
+
+    #sidenav.show {
+        margin-top: 52px;
+    }
+
+    #section-intro > div {
+        width: 100%;
+    }
+
+    #section-intro h2 {
+        font-size: 48px !important;
+    }
+
+    #section-intro p {
+        font-size: 18px !important;
+
+    }
+
+    #section-intro footer {
+        display: none;
     }
 }

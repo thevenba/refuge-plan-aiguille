@@ -1,326 +1,181 @@
+$(document).ready(function () {
+    /***** BEGIN: SCROLL *****/
+    /*
+     * On anime la redirection au clique sur les liens internes
+     */
+    $('a[href*=#section]').on('click', function (e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - 52}, 1200, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    /*
+     * On anime les sections au scroll de la fenetre
+     */
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > $("#section-about").offset().top - 53) {
+            $("#header").removeClass("alt");
+            $("#nav").addClass("w3-card-8");
+        } else {
+            $("#header").addClass("alt");
+            $("#nav").removeClass("w3-card-8");
+        }
+
+        if ($(document).scrollTop() > $("#section-about").offset().top / 2) {
+            $("#section-intro > div").addClass("hidden");
+        } else {
+            $("#section-intro > div").removeClass("hidden");
+        }
+
+        if ($(document).scrollTop() < $("#section-about").offset().top / 2 || $(document).scrollTop() > $("#section-about").offset().top + $("#section-about").offset().top / 2) {
+            $("#section-about > div").addClass("hidden");
+        } else {
+            $("#section-about > div").removeClass("hidden");
+        }
+
+        if ($(document).scrollTop() < $("#section-about").offset().top + $("#section-about").offset().top / 2 || $(document).scrollTop() > $("#section-menu").offset().top + $("#section-about").offset().top / 2) {
+            $("#section-menu > div").addClass("hidden");
+        } else {
+            $("#section-menu > div").removeClass("hidden");
+        }
+
+        if ($(document).scrollTop() < $("#section-menu").offset().top + $("#section-about").offset().top / 2) {
+            $("#section-gallery > div").addClass("hidden-bottom");
+        } else if ($(document).scrollTop() > $("#section-gallery").offset().top + $("#section-about").offset().top / 2) {
+            $("#section-gallery > div").addClass("hidden-top");
+        } else {
+            $("#section-gallery > div").removeClass("hidden-bottom");
+            $("#section-gallery > div").removeClass("hidden-top");
+        }
+
+        if ($(document).scrollTop() < $("#section-gallery").offset().top + $("#section-about").offset().top / 2) {
+            $("#section-contact > div").addClass("hidden");
+        } else {
+            $("#section-contact > div").removeClass("hidden");
+        }
+    });
+    /***** END: SCROLL *****/
+
+    /***** BEGIN: PARALLAX *****/
+    $('#section-intro').parallax("center", 0.1, true);
+    $('#section-about').parallax("center", 0.4, true);
+    $('#section-menu').parallax("center", 0.2, true);
+    $('#section-gallery').parallax("center", 0.1, true);
+    /***** END: PARALLAX *****/
+
+    // On appelle le carousel
+    $('.carousel').carousel();
+
+    // On insert l'année actuelle
+    $('span.year').text(new Date().getFullYear());
+    // On insert l'année prochaine
+    $('span.next-year').text(new Date().getFullYear() + 1);
+
+});
+
 /*
- Big Picture by HTML5 UP
- html5up.net | @n33co
- Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ * La fonction qui affiche le menu de navigation
  */
-
-(function ($) {
-
-    skel.breakpoints({
-        wide: '(max-width: 1920px)',
-        normal: '(max-width: 1680px)',
-        narrow: '(max-width: 1280px)',
-        narrower: '(max-width: 1000px)',
-        mobile: '(max-width: 736px)',
-        mobilenarrow: '(max-width: 480px)',
-    });
-
-    $(function () {
-
-        var $window = $(window),
-                $body = $('body'),
-                $header = $('#header'),
-                $intro = $('#intro'),
-                $all = $body.add($header);
-
-        // Disable animations/transitions until the page has loaded.
-        $body.addClass('is-loading');
-
-        $window.on('load', function () {
-            window.setTimeout(function () {
-                $body.removeClass('is-loading');
-            }, 0);
-        });
-
-        // Touch mode.
-        skel.on('change', function () {
-
-            if (skel.vars.mobile || skel.breakpoint('mobile').active)
-                $body.addClass('is-touch');
-            else
-                $body.removeClass('is-touch');
-
-        });
-
-        // Fix: Placeholder polyfill.
-        $('form').placeholder();
-
-        // Prioritize "important" elements on mobile.
-        skel.on('+mobile -mobile', function () {
-            $.prioritize(
-                    '.important\\28 mobile\\29',
-                    skel.breakpoint('mobile').active
-                    );
-        });
-
-        // CSS polyfills (IE<9).
-        if (skel.vars.IEVersion < 9)
-            $(':last-child').addClass('last-child');
-
-        // Off-Canvas Navigation.
-
-			// Navigation Button.
-				$(
-					'<div id="navButton">' +
-						'<a href="#navPanel" class="toggle"></a>' +
-					'</div>'
-				)
-					.appendTo($body);
-
-			// Navigation Panel.
-				$(
-					'<div id="navPanel">' +
-						'<nav>' +
-							$('#nav').navList() +
-						'</nav>' +
-					'</div>'
-				)
-					.appendTo($body)
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						target: $body,
-						visibleClass: 'navPanel-visible'
-					});
-                                
-                                $("#navPanel > nav > a[href='#intro'] > span").addClass("fa fa-home");
-
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#navButton, #navPanel, #page-wrapper')
-						.css('transition', 'none');
-
-        
-        // Gallery.
-        $window.on('load', function () {
-            $('.gallery').poptrox({
-                baseZIndex: 10001,
-                useBodyOverflow: false,
-                usePopupEasyClose: false,
-                overlayColor: '#1f2328',
-                overlayOpacity: 0.65,
-                usePopupDefaultStyling: false,
-                usePopupCaption: true,
-                popupLoaderText: '',
-                windowMargin: (skel.breakpoint('mobile').active ? 5 : 50),
-                usePopupNav: true
-            });
-        });
-
-        // Section transitions.
-        if (!skel.vars.mobile
-                && skel.canUse('transition')) {
-
-            var on = function () {
-
-                // Generic sections.
-                $('.main.style1')
-                        .scrollex({
-                            mode: 'middle',
-                            delay: 100,
-                            initialize: function () {
-                                $(this).addClass('inactive');
-                            },
-                            terminate: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            enter: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            leave: function () {
-                                $(this).addClass('inactive');
-                            }
-                        });
-
-                $('.main.style2')
-                        .scrollex({
-                            mode: 'middle',
-                            delay: 100,
-                            initialize: function () {
-                                $(this).addClass('inactive');
-                            },
-                            terminate: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            enter: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            leave: function () {
-                                $(this).addClass('inactive');
-                            }
-                        });
-
-                // Gallery
-                $('#gallery')
-                        .scrollex({
-                            top: '40vh',
-                            bottom: '30vh',
-                            delay: 50,
-                            initialize: function () {
-
-                                var t = $(this);
-
-                                t.find('.row.images')
-                                        .addClass('inactive');
-
-                            },
-                            terminate: function () {
-
-                                var t = $(this);
-
-                                t.find('.row.images')
-                                        .removeClass('inactive');
-
-                            },
-                            enter: function () {
-
-                                var t = $(this),
-                                        rows = t.find('.row.images'),
-                                        length = rows.length,
-                                        n = 0;
-
-                                rows.each(function () {
-                                    var row = $(this);
-                                    window.setTimeout(function () {
-                                        row.removeClass('inactive');
-                                    }, 100 * (length - n++));
-                                });
-
-                            },
-                            leave: function (t) {
-
-                                var t = $(this),
-                                        rows = t.find('.row.images'),
-                                        length = rows.length,
-                                        n = 0;
-
-                                rows.each(function () {
-                                    var row = $(this);
-                                    window.setTimeout(function () {
-                                        row.addClass('inactive');
-                                    }, 100 * (length - n++));
-                                });
-
-                            }
-                        });
-
-                // Contact.
-                $('#contact')
-                        .scrollex({
-                            top: '25%',
-                            delay: 50,
-                            initialize: function () {
-                                $(this).addClass('inactive');
-                            },
-                            terminate: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            enter: function () {
-                                $(this).removeClass('inactive');
-                            },
-                            leave: function () {
-                                $(this).addClass('inactive');
-                            }
-                        });
-
-            };
-
-            var off = function () {
-
-                // Generic sections.
-                $('.main.style1')
-                        .unscrollex();
-
-                $('.main.style2')
-                        .unscrollex();
-
-                // Gallery.
-                $('#gallery')
-                        .unscrollex();
-
-                // Contact.
-                $('#contact')
-                        .unscrollex();
-
-            };
-
-            skel.on('change', function () {
-
-                if (skel.breakpoint('mobile').active)
-                    (off)();
-                else
-                    (on)();
-
-            });
-
-        }
-
-        // Events.
-        var resizeTimeout, resizeScrollTimeout;
-
-        $window
-                .resize(function () {
-
-                    // Disable animations/transitions.
-                    $body.addClass('is-resizing');
-
-                    window.clearTimeout(resizeTimeout);
-
-                    resizeTimeout = window.setTimeout(function () {
-
-                        // Update scrolly links.
-                        $('a[href^=#]').scrolly({
-                            speed: 1500,
-                            offset: $header.outerHeight() - 1
-                        });
-
-                        // Re-enable animations/transitions.
-                        window.setTimeout(function () {
-                            $body.removeClass('is-resizing');
-                            $window.trigger('scroll');
-                        }, 0);
-
-                    }, 100);
-
-                })
-                .load(function () {
-                    $window.trigger('resize');
-                });
-
-
-
-        // Header.
-        if (skel.vars.IEVersion < 9)
-            $header.removeClass('alt');
-
-        if ($('#header-alt-trigger').length > 0
-                && $header.hasClass('alt')) {
-
-            $window.on('resize', function () {
-                $window.trigger('scroll');
-            });
-
-            $('#header-alt-trigger').scrollex({
-                bottom: $header.outerHeight() +1,
-                initialize: function () {
-                    $header.addClass('alt');
-                },
-                terminate: function () {
-                    $header.removeClass('alt');
-                },
-                enter: function () {
-                    $header.addClass('alt');
-                },
-                leave: function () {
-                    $header.removeClass('alt');
-                }
-            });
-
-        }
-    });
-
-
-})(jQuery);
+function openNav() {
+    var x = document.getElementById("sidenav");
+    var openNav = document.getElementById("open-nav");
+    console.log(openNav.firstElementChild);
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+        openNav.firstElementChild.style.transform = "translateY(8px) rotate(45deg)";
+        openNav.children[1].style.opacity = "0";
+        openNav.lastElementChild.style.transform = "translateY(-8px) rotate(-45deg)";
+    } else {
+        x.className = x.className.replace(" show", "");
+        openNav.firstElementChild.style.transform = "rotate(0deg)";
+        openNav.children[1].style.opacity = "1";
+        openNav.lastElementChild.style.transform = "rotate(0deg)";
+    }
+}
+
+/***** BEGIN: LIGHTBOX *****/
+/*
+ * La foction qui affiche la lightbox
+ */
+function openModal() {
+    document.getElementById('lightbox').style.display = "block";
+}
+
+/*
+ * La fonction qui cache la lightbox
+ */
+function closeModal() {
+    document.getElementById('lightbox').style.display = "none";
+}
+
+// L'index du slide
+var slideIndex = 1;
+showDivs(slideIndex);
+
+/*
+ * La fonction qui augmente d'un nombre l'index du slide
+ * @param n le nombre
+ */
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+/*
+ * La fonction qui affiche le slide actuel
+ * @param n l'index du slide actuel
+ */
+function currentDiv(n) {
+    showDivs(slideIndex = n);
+}
+
+/*
+ * La fonction qui affiche un slide et cache les autres
+ * @param n l'index du slide affiché
+ */
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > x.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = x.length;
+    }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+
+    }
+    x[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " w3-opacity-off";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+}
+/***** END: LIGHTBOX *****/
+
+/*
+ * La fonction qui affiche la route cliquée et cache toutes les autres
+ * Et enleve les bordures des boutons sauf le bouton actif
+ * @param evt le bouton actif
+ * @param routeName la route cliquée
+ */
+function openRoute(evt, routeName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("route");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("route-tablink");
+    for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-border-theme", "");
+    }
+    document.getElementById(routeName).style.display = "block";
+    evt.currentTarget.className += " w3-border-theme";
+}

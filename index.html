@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-        Big Picture by HTML5 UP
-        html5up.net | @n33co
-        Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -15,138 +10,163 @@
         <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
         <link rel="alternate" hreflang="fr" href="http://refuge-plan-aiguille.com/index.html" />
         <link rel="alternate" hreflang="en" href="http://refuge-plan-aiguille.com/en/index.html" />
-        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/bootstrap.nav.css" />
-        <link rel="stylesheet" href="assets/css/refuge-plan-aiguille.css" />
-        <link rel="stylesheet" href="assets/css/event.css" />
-        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
+        <link href="assets/css/w3.css" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <script src="https://use.fontawesome.com/ed61d7741c.js"></script>
     </head>
-    <body>
-
-        <!-- Event Modal-->
-<!--        <div id="event-modal" class="poptrox-overlay" style="position: fixed; left: 0px; top: 0px; z-index: 10001; width: 100%; height: 100%; text-align: center; cursor: pointer; display: block; opacity: 1;">
-            <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-            <div style="position:absolute;left:0;top:0;width:100%;height:100%;background:#1f2328;opacity:0.65;filter:alpha(opacity=65);"></div>
-            <div id="event-modal-content" class="poptrox-popup" style="display: inline-block; vertical-align: middle; position: relative; z-index: 1; cursor: auto; min-width: 200px; min-height: 100px; width: auto; height: auto; padding-bottom: 0px;">
-                <div class="loader" style="display: none;"></div>
-                <div class="pic" style="display: block; text-indent: 0px;">
-                    <img src="images/modal.jpg" alt="" style="vertical-align: bottom;">
-                </div>
-                <div class="event-caption" style="display: block;">
-                    <h2>Evénement musical</h2>
-                    <p>Le 5 juillet à partir de 14h00 les violons sont à la fête au Refuge du Plan de l'Aiguille. Venez nombreux les écouter.</p>
-                </div>
-                <span id="event-modal-close" class="closer" style="cursor: pointer; display: block;">×</span>
+    <body style="overflow: hidden;">
+        <div id="loader">
+            <div>
+                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Chargement...</span>
             </div>
-        </div>-->
+        </div>
+        <script>
+            window.addEventListener("load", function () {
+                document.body.style.overflow = "visible";
+                document.getElementById('loader').style.display = "none";
+            });
+        </script>
 
         <!-- Header -->
         <header id="header" class="alt">
-
-            <!-- Logo -->
-            <h1 id="logo"><a href="http://refuge-plan-aiguille.com">Refuge du Plan de l'Aiguille</a></h1>
-
             <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="http://refuge-plan-aiguille.com/en">EN</a></li>
-                    <li><a href="http://refuge-plan-aiguille.com">FR</a></li>
-                    <li><a href="#intro"><i class="fa fa-home"></i></a>
-                    <li><a href="#about">A propos</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#gallery">Galerie</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <nav id="nav" class="w3-top">
+                <ul class="w3-navbar w3-theme w3-xlarge">
+                    <li class="w3-hide-large w3-opennav w3-right">
+                        <a id="open-nav" href="javascript:void(0);" onclick="openNav()">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </a>
+                    </li>
+                    <li id="logo"><a class="w3-hover-none" href="http://refuge-plan-aiguille.com">Refuge du Plan de l'Aiguille</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="#section-menu">Menu</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="#section-about">A propos</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="#section-intro"><i class="fa fa-home"></i></a>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com">FR</a></li>
+                    <li class="w3-right w3-hide-small w3-hide-medium"><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com/en">EN</a></li>
                 </ul>
             </nav>
-
+            <div id="sidenav" class="w3-hide-large">
+                <ul class="w3-navbar w3-large w3-theme">
+                    <li><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com/en">EN</a></li>
+                    <li><a class="w3-hover-theme-dark" href="http://refuge-plan-aiguille.com">FR</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-intro"><i class="fa fa-home"></i></a>
+                    <li><a class="w3-hover-theme-dark" href="#section-about">A propos</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-menu">Menu</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-gallery">Galerie</a></li>
+                    <li><a class="w3-hover-theme-dark" href="#section-contact">Contact</a></li>
+                </ul>
+            </div>
         </header>
 
         <!-- Intro -->
-        <section id="intro" class="main style1 dark fullscreen">
-            <div class="content container 75%">
+        <section id="section-intro" class="fullscreen">
+            <div class="w3-container w3-center w3-text-white w3-display-middle w3-animate-opacity">
                 <header>
-                    <h2 style="text-shadow: 0px 2px 4px rgba(0,0,0,0.8);">Bienvenue au Refuge du Plan de l'Aiguille</h2>
+                    <h2 class="w3-jumbo">Bienvenue au Refuge du Plan de l'Aiguille</h2>
                 </header>
-                <p style="text-shadow: 0px 2px 4px rgba(0,0,0,0.8);"><strong>Refuge de moyenne montagne au pied des Aiguilles de Chamonix et du massif du Mont-Blanc, le Refuge du Plan de l'Aiguille domine la vallée de Chamonix du haut de ses 2207m d'altitude. <br />
-                        Hors gardiennage, le refuge possède un local de 10 places ouvert en permanence l’hiver.</strong></p>
-                <footer>
-                    <a href="#about" class="button style2 down">More</a>
+                <p class="w3-xlarge">Refuge de moyenne montagne au pied des Aiguilles de Chamonix et du massif du Mont-Blanc, le Refuge du Plan de l'Aiguille domine la vallée de Chamonix du haut de ses 2207m d'altitude. <br />
+                    Hors gardiennage, le refuge possède un local de 10 places ouvert en permanence l’hiver.</p>
+                <footer class="w3-hide-small">
+                    <a href="#section-about">
+                        <div id="chevron-down"></div>
+                        <div id="discover" class="w3-xlarge w3-padding-24 w3-btn w3-white w3-text-theme-action w3-border w3-border-theme-action">Découvrir</div>
+                    </a>
                 </footer>
             </div>
         </section>
         <div id="header-alt-trigger">
         </div>
         <!-- About -->
-        <section id="about" class="main style2 right dark fullscreen">
-            <a href="#intro" class="button style2 up anchored">Next</a>
-            <div class="content box style2" style="text-align: center; font-size: smaller">
+        <section id="section-about" class="fullscreen">
+            <a href="#section-intro" class="w3-display-topmiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-up w3-hide-small w3-hide-medium"><i class="fa fa-chevron-up"></i></a>
+            <div class="w3-container w3-white w3-card-8 hidden">
                 <header>
                     <h2>A propos de nous</h2>
                 </header>
                 <p>Depuis 2006, Claude et Marie-Noelle vous accueillent au Refuge du Plan de l'Aiguille, là-haut, à 2207m d'altitude où la beauté du paysage n'a d'égal que sa richesse. </p>
-                <div class="row" style="margin-top: 0px; margin-bottom: 1em;">
-                    <div class="4u 12u(mobile)">
-                        <section class="first">
-                            <i class="icon featured fa-bed"></i>
+                <div id="formule" class="w3-row w3-section">
+                    <div class="w3-col m4 l4">
+                        <div class="w3-container w3-center w3-padding-top">
+                            <span class="w3-tag w3-padding-8 w3-round w3-xlarge bed-formule"><i class="fa fa-bed fa-2x"></i></span>
                             <header>
                                 <h3>Nuitée</h3>
                             </header>
-                            <p class="full-price"><sup>€</sup><span class="price">22</span>/pers</p>
-                        </section>
+                            <p class="w3-tag w3-theme"><sup>€</sup><span class="w3-xxlarge">22</span>/pers</p>
+                        </div>
                     </div>
-                    <div class="4u 12u(mobile)">
-                        <section class="middle">
-                            <i class="icon featured fa-bed"></i>
-                            <i class="icon featured alt fa-cutlery"></i>
+                    <div class="w3-col m4 l4">
+                        <div class="w3-container w3-center w3-padding-top">
+                            <span class="w3-tag w3-padding-8 w3-round w3-xlarge bed-formule">
+                                <i class="fa fa-bed fa-2x"></i>
+                            </span>
+                            <span class="w3-tag w3-padding-8 w3-round w3-xlarge cutlery-formule">
+                                <i class="fa fa-cutlery fa-2x"></i>
+                            </span>
                             <header>
                                 <h3>Demi-pension</h3>
                             </header>
-                            <p class="full-price"><sup>€</sup><span class="price">50</span>/pers</p>
-                        </section>
+                            <p class="w3-tag w3-theme"><sup>€</sup><span class="w3-xxlarge">50</span>/pers</p>
+                        </div>
                     </div>
-                    <div class="4u 12u(mobile)">
-                        <section class="last">
-                            <i class="icon featured alt2 fa-child"></i>
+                    <div class="w3-col m4 l4">
+                        <div class="w3-container w3-center w3-padding-top">
+                            <span class="w3-tag w3-padding-8 w3-round w3-xlarge child-formule">
+                                <i class="fa fa-child fa-2x"></i>
+                            </span>
                             <header>
                                 <h3>Enfant</h3>
                             </header>
-                            <p class="full-price"><sup>€</sup><span class="price">38</span>/pers</p>
-                        </section>
+                            <p class="w3-tag w3-theme"><sup>€</sup><span class="w3-xxlarge">38</span>/pers</p>
+                        </div>
                     </div>
                 </div>
-                <ul class="feature-icons">
-                    <li class="fa-paw">Animaux acceptés</li>
-                    <li class="fa-credit-card">Carte de crédit acceptées</li>
-                    <li class="fa-shower">Douches chaudes</li>
-                    <li class="fa-tint">Récupérateurs d'eau de pluie</li>
-                    <li class="fa-snow">Récupérateurs d'eau de fonte</li>
-                    <li class="fa-wifi">Wifi</li>
-                </ul>
+                <div id="features" class="w3-row w3-margin-bottom w3-padding-top">
+                    <div class="w3-half">
+                        <ul class="fa-ul">
+                            <li><i class="fa fa-paw w3-text-theme fa-li"></i>Animaux acceptés</li>
+                            <li><i class="w3-text-theme fa fa-credit-card fa-li"></i>Carte de crédit acceptées</li>
+                            <li><i class="w3-text-theme fa fa-shower fa-li"></i>Douches chaudes</li>
+                        </ul>
+                    </div>
+                    <div class="w3-half">
+                        <ul class="fa-ul">
+                            <li><i class="w3-text-theme fa fa-tint fa-li"></i>Récupérateurs d'eau de pluie</li>
+                            <li><i class="w3-text-theme fa fa-snowflake-o fa-li"></i>Récupérateurs d'eau de fonte</li>
+                            <li><i class="w3-text-theme fa fa-wifi fa-li"></i>Wifi</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <a href="#menu" class="button style2 down anchored">Next</a>
+            <a href="#section-menu" class="w3-display-bottommiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-down w3-hide-small w3-hide-medium"><i class="fa fa-chevron-down"></i></a>
         </section>
 
         <!-- Menu -->
-        <section id="menu" class="main style2 left dark fullscreen">
-            <a href="#about" class="button style2 up anchored">Next</a>
-            <div class="content box style2">
-                <header>
-                    <h2>Menu</h2>
-                </header>
-                <p>Uniquement disponible le midi</p>
-                <div data-example-id="togglable-tabs">
-                    <ul id="menuTabs" class="nav nav-tabs" role="tablist" style="height: 46px;">
-                        <li role="presentation" class="active"><button class="button-reset" href="#salades" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Salades</button></li>
-                        <li role="presentation"><button class="button-reset" href="#croutes" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Croutes</button></li>
-                        <li role="presentation"><button class="button-reset" href="#planches" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Planches</button></li>
-                        <li role="presentation"><button class="button-reset" href="#plats" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Plats</button></li>
-                        <li role="presentation"><button class="button-reset" href="#desserts" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Desserts</button></li>
-                    </ul>
-                    <div id="menuTabContent" class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="salades" aria-labelledBy="home-tab">
+        <section id="section-menu" class="fullscreen">
+            <a href="#section-about" class="w3-display-topmiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-up w3-hide-small w3-hide-medium"><i class="fa fa-chevron-up"></i></a>
+            <div class="w3-white w3-card-8">
+                <div class="w3-container">
+                    <header>
+                        <h2>Menu</h2>
+                    </header>
+                    <p>Uniquement disponible le midi</p>
+                </div>
+                <div id="carousel-menu" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <ol class="carousel-indicators w3-navbar">
+                        <li data-target="#carousel-menu" data-slide-to="0" class="active tablink"><img src="images/food-icon/salad.png" alt="salades"/><span class="w3-hide-small">&nbsp;Salades</span></li>
+                        <li data-target="#carousel-menu" data-slide-to="1" class="tablink"><img src="images/food-icon/croute.png" alt="croutes"/><span class="w3-hide-small">&nbsp;Croutes</span></li>
+                        <li data-target="#carousel-menu" data-slide-to="2" class="tablink"><img src="images/food-icon/planche.png" alt="planches"/><span class="w3-hide-small">&nbsp;Planches</span></li>
+                        <li data-target="#carousel-menu" data-slide-to="3" class="tablink"><img src="images/food-icon/spaguetti.png" alt="plats"/><span class="w3-hide-small">&nbsp;Plats</span></li>
+                        <li data-target="#carousel-menu" data-slide-to="4" class="tablink"><img src="images/food-icon/pie-1.png" alt="desserts"/><span class="w3-hide-small">&nbsp;Desserts</span></li>
+                    </ol>
+                    <div class="carousel-inner w3-topbar w3-border-theme" role="listbox">
+                        <div class="item active">
                             <ul class="restaurant-menu-list">
                                 <!-- item -->
                                 <li>
@@ -222,7 +242,7 @@
                                 <!-- /item -->
                             </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="croutes" aria-labelledBy="profile-tab">
+                        <div class="item">
                             <ul class="restaurant-menu-list">
                                 <!-- item -->
                                 <li>
@@ -298,7 +318,7 @@
                                 <!-- /item -->
                             </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="planches" aria-labelledBy="profile-tab">
+                        <div class="item">
                             <ul class="restaurant-menu-list">
                                 <!-- item -->
                                 <li>
@@ -398,183 +418,179 @@
                                 <!-- /item -->
                             </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="plats" aria-labelledBy="home-tab">
-                            <div class="row" style="margin: 0;">
-                                <ul class="restaurant-menu-list 6u 12u(mobile)" style="padding: 0;">
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Potage maison</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €7.00
-                                            </div>
-                                            <!-- /item price -->
+                        <div class="item">
+                            <ul class="restaurant-menu-list">
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Potage maison</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Soupe de légumes, tomme</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €7.00
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Omelette nature</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €7.50
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Soupe de légumes, tomme</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Omelette nature</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Omelette, salade verte</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €7.50
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Omelette montagne</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €10.00
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Omelette, salade verte</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Omelette montagne</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Omelette, fromage, lard, pomme de terre, salade verte</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €10.00
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Croustillant reblochon</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €12.50
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Omelette, fromage, lard, pomme de terre, salade verte</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Croustillant reblochon</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Reblochon, feuille de brick, jambon cru, salade verte, tomates</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €12.50
                                         </div>
-                                        <!-- /item description -->
-                                    </li>
-                                </ul>
-                                <ul class="restaurant-menu-list 6u 12u(mobile)" style="padding: 0 0 0 20px;">
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Lasagne maison</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €10.50
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Reblochon, feuille de brick, jambon cru, salade verte, tomates</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Lasagne maison</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Lasagne, salade verte</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €10.50
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Tagliatielle au saumon</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €11.00
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Lasagne, salade verte</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Tagliatielle au saumon</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Tagliatielle, saumon, crème</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €11.00
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                    <!-- item -->
-                                    <li>
-                                        <!-- item title -->
-                                        <div class="restaurant-menu-title">
-                                            <!-- item name -->
-                                            <div class="restaurant-menu-name">
-                                                <span>Farcement savoyard</span>
-                                            </div>
-                                            <!-- /item name -->
-                                            <div class="restaurant-menu-dots"></div>
-                                            <!-- item price -->
-                                            <div class="restaurant-menu-price">
-                                                €11.50
-                                            </div>
-                                            <!-- /item price -->
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Tagliatielle, saumon, crème</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                                <!-- item -->
+                                <li>
+                                    <!-- item title -->
+                                    <div class="restaurant-menu-title">
+                                        <!-- item name -->
+                                        <div class="restaurant-menu-name">
+                                            <span>Farcement savoyard</span>
                                         </div>
-                                        <!-- /item title -->
-                                        <!-- item description -->
-                                        <div class="restaurant-menu-description">
-                                            <p>Spécialité du pays : mélange de pommes de terre râpées, pruneaux, raisins secs, cuit au bain-marie dans un moule chemisé de lard, salade verte</p>
+                                        <!-- /item name -->
+                                        <div class="restaurant-menu-dots"></div>
+                                        <!-- item price -->
+                                        <div class="restaurant-menu-price">
+                                            €11.50
                                         </div>
-                                        <!-- /item description -->
-                                    </li>	
-                                    <!-- /item -->
-                                </ul>
-                            </div>
+                                        <!-- /item price -->
+                                    </div>
+                                    <!-- /item title -->
+                                    <!-- item description -->
+                                    <div class="restaurant-menu-description">
+                                        <p>Spécialité du pays : mélange de pommes de terre râpées, pruneaux, raisins secs, cuit au bain-marie dans un moule chemisé de lard, salade verte</p>
+                                    </div>
+                                    <!-- /item description -->
+                                </li>	
+                                <!-- /item -->
+                            </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="desserts" aria-labelledBy="profile-tab">
+                        <div class="item">
                             <ul class="restaurant-menu-list">
                                 <!-- item -->
                                 <li>
@@ -698,176 +714,222 @@
                                 <!-- /item -->
                             </ul>
                         </div>
+                        <a class="left carousel-control w3-hide-small" href="#carousel-menu" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-right w3-text-theme-action" aria-hidden="true"></i><i class="fa fa-chevron-right w3-text-theme-action" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control w3-hide-small" href="#carousel-menu" role="button" data-slide="next">
+                            <i class="fa fa-chevron-left w3-text-theme-action" aria-hidden="true"></i><i class="fa fa-arrow-left w3-text-theme-action" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
-
             </div>
-            <a href="#gallery" class="button style2 down anchored">Next</a>
+            <a href="#section-gallery" class="w3-display-bottommiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-down w3-hide-small w3-hide-medium"><i class="fa fa-chevron-down"></i></a>
         </section>
 
         <!-- Gallery -->
-        <section id="gallery" class="main style3 primary">
-            <a href="#menu" class="button style1 up anchored">Next</a>
-            <div class="content container">
+        <section id="section-gallery" class="fullscreen">
+            <a href="#section-menu" class="w3-display-topmiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-up w3-hide-small w3-hide-medium"><i class="fa fa-chevron-up"></i></a>
+            <div class="w3-container w3-center w3-white w3-card-8">
                 <header>
                     <h2>Galerie</h2>
                 </header>
 
                 <!-- Lightbox Gallery  -->
-                <div class="container 75% gallery">
-                    <div class="row 0% images">
-                        <div class="3u 12u(mobile)"><a href="images/fulls/11.jpg" class="image fit from-left"><img src="images/thumbs/11.jpg" title="Le drapeau de la Suis... de la Savoie !" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/10.jpg" class="image fit from-left"><img src="images/thumbs/10.jpg" title="Le bassin" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/09.jpg" class="image fit from-right"><img src="images/thumbs/09.jpg" title="Le Refuge du Plan de l'Aiguille" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/12.jpg" class="image fit from-right"><img src="images/thumbs/12.jpg" title="Le refuge, il y a bien longtemps" alt="" /></a></div>
-                    </div>
-                    <div class="row 0% images">
-                        <div class="3u 12u(mobile)"><a href="images/fulls/02.jpg" class="image fit from-left"><img src="images/thumbs/02.jpg" title='La chambre "Le Plan"' alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/13.jpg" class="image fit from-left"><img src="images/thumbs/13.jpg" title="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/03.jpg" class="image fit from-right"><img src="images/thumbs/03.jpg" title="Du materiel de montagne... De l'ancien materiel !" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/thumbs/04.jpg" title="La petite salle à manger" alt="" /></a></div>
-                    </div>
-                    <div class="row 0% images">
-                        <div class="3u 12u(mobile)"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/thumbs/05.jpg" title="La planche Blaitière" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/06.jpg" class="image fit from-left"><img src="images/thumbs/06.jpg" title="La planche Savoyarde" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/07.jpg" class="image fit from-right"><img src="images/thumbs/07.jpg" title="La salade du Refuge" alt="" /></a></div>
-                        <div class="3u 12u(mobile)"><a href="images/fulls/08.jpg" class="image fit from-right"><img src="images/thumbs/08.jpg" title="La salade de Mr. Seguin" alt="" /></a></div>
-                    </div>
-                    <div class="row 0% images">
-                        <div class="6u 12u(mobile)"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/thumbs/01.jpg" title="Nano et Nanesse, les deux ânes du refuge" alt="" /></a></div>
-                        <div class="6u 12u(mobile)"><a href="images/fulls/14.jpg" class="image fit from-right"><img src="images/thumbs/14.jpg" title="Oh la belle marmotte !" alt="" /></a></div>
-                    </div>
-                    <div class="images">
-                        <div><a href="images/fulls/15.jpg" class="image fit from-bottom"><img src="images/thumbs/15.jpg" title="Panorama du refuge et des montagnes de Chamonix" alt="" /></a></div>
-                    </div>
-                    <div class="images">
-                        <div style="padding-bottom: 75%; position: relative; display: block; height: 0; overflow: hidden;">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LbhhdUa4ds8" frameborder="0" allowfullscreen style="position: absolute; top: 0; bottom: 0; left: 0;"></iframe>
+                <div id="gallery" class="w3-row">
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/11.jpg" onclick="openModal();currentDiv(1)" title="Le drapeau de la Suis... de la Savoie !" alt="Le drapeau de la Suis... de la Savoie !" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/10.jpg" onclick="openModal();currentDiv(2)" title="Le bassin" alt="Le bassin" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/09.jpg" onclick="openModal();currentDiv(3)" title="Le Refuge du Plan de l'Aiguille" alt="Le Refuge du Plan de l'Aiguille" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/12.jpg" onclick="openModal();currentDiv(4)" title="Le refuge, il y a bien longtemps" alt="Le refuge, il y a bien longtemps" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/02.jpg" onclick="openModal();currentDiv(5)" title='La chambre "Le Plan"' alt='La chambre "Le Plan"' /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/13.jpg" onclick="openModal();currentDiv(6)" title="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" alt="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/03.jpg" onclick="openModal();currentDiv(7)" title="Du materiel de montagne... De l'ancien materiel !" alt="Du materiel de montagne... De l'ancien materiel !" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/04.jpg" onclick="openModal();currentDiv(8)" title="La petite salle à manger" alt="La petite salle à manger" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/05.jpg" onclick="openModal();currentDiv(9)" title="La planche Blaitière" alt="La planche Blaitière" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/06.jpg" onclick="openModal();currentDiv(10)" title="La planche Savoyarde" alt="La planche Savoyarde" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/07.jpg" onclick="openModal();currentDiv(11)" title="La salade du Refuge" alt="La salade du Refuge" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/08.jpg" onclick="openModal();currentDiv(12)" title="La salade de Mr. Seguin" alt="La salade de Mr. Seguin" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/01.jpg" onclick="openModal();currentDiv(13)" title="Nano et Nanesse, les deux ânes du refuge" alt="Nano et Nanesse, les deux ânes du refuge" /></div>
+                    <div class="w3-col s6 m4 l3"><img class="w3-hover-shadow cursor" src="images/fulls/14.jpg" onclick="openModal();currentDiv(14)" title="Oh la belle marmotte !" alt="Oh la belle marmotte !" /></div>
+                    <div class="w3-col s12 m4 l6"><img class="w3-hover-shadow cursor" src="images/fulls/15.jpg" onclick="openModal();currentDiv(15)" title="Panorama du refuge et des montagnes de Chamonix" alt="Panorama du refuge et des montagnes de Chamonix" /></div>
+                </div>
+
+                <div id="lightbox" class="w3-modal w3-black">
+                    <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright cursor" onclick="closeModal()">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom" style="background-color: #000;">
+                        <div class="w3-content" style="max-width:1200px">
+                            <img class="mySlides" src="images/fulls/11.jpg" title="Le drapeau de la Suis... de la Savoie !" alt="Le drapeau de la Suis... de la Savoie !" />
+                            <img class="mySlides" src="images/fulls/10.jpg" title="Le bassin" alt="Le bassin" />
+                            <img class="mySlides" src="images/fulls/09.jpg" title="Le Refuge du Plan de l'Aiguille" alt="Le Refuge du Plan de l'Aiguille" />
+                            <img class="mySlides" src="images/fulls/12.jpg" title="Le refuge, il y a bien longtemps" alt="Le refuge, il y a bien longtemps" />
+                            <img class="mySlides" src="images/fulls/02.jpg" title='La chambre "Le Plan"' alt='La chambre "Le Plan"' />
+                            <img class="mySlides" src="images/fulls/13.jpg" title="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" alt="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" />
+                            <img class="mySlides" src="images/fulls/03.jpg" title="Du materiel de montagne... De l'ancien materiel !" alt="Du materiel de montagne... De l'ancien materiel !" />
+                            <img class="mySlides" src="images/fulls/04.jpg" title="La petite salle à manger" alt="La petite salle à manger" />
+                            <img class="mySlides" src="images/fulls/05.jpg" title="La planche Blaitière" alt="La planche Blaitière" />
+                            <img class="mySlides" src="images/fulls/06.jpg" title="La planche Savoyarde" alt="La planche Savoyarde" />
+                            <img class="mySlides" src="images/fulls/07.jpg" title="La salade du Refuge" alt="La salade du Refuge" />
+                            <img class="mySlides" src="images/fulls/08.jpg" title="La salade de Mr. Seguin" alt="La salade de Mr. Seguin" />
+                            <img class="mySlides" src="images/fulls/01.jpg" title="Nano et Nanesse, les deux ânes du refuge" alt="Nano et Nanesse, les deux ânes du refuge" />
+                            <img class="mySlides" src="images/fulls/14.jpg" title="Oh la belle marmotte !" alt="Oh la belle marmotte !" />
+                            <img class="mySlides" src="images/fulls/15.jpg" title="Panorama du refuge et des montagnes de Chamonix" alt="Panorama du refuge et des montagnes de Chamonix" />
+                            <div class="w3-row w3-black w3-center">
+                                <div class="w3-container w3-display-container">
+                                    <p id="caption"></p>
+                                    <span class="w3-display-middle w3-hover-text-grey w3-large cursor" style="left:2%" onclick="plusDivs(-1)">&#10094;</span>
+                                    <span class="w3-display-middle w3-hover-text-grey w3-large cursor" style="left:98%" onclick="plusDivs(1)">&#10095;</span>
+                                </div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/11.jpg" onclick="currentDiv(1)" title="Le drapeau de la Suis... de la Savoie !" alt="Le drapeau de la Suis... de la Savoie !" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/10.jpg" onclick="currentDiv(2)" title="Le bassin" alt="Le bassin" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/09.jpg" onclick="currentDiv(3)" title="Le Refuge du Plan de l'Aiguille" alt="Le Refuge du Plan de l'Aiguille" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/12.jpg" onclick="currentDiv(4)" title="Le refuge, il y a bien longtemps" alt="Le refuge, il y a bien longtemps" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/02.jpg" onclick="currentDiv(5)" title='La chambre "Le Plan"' alt='La chambre "Le Plan"' /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/13.jpg" onclick="currentDiv(6)" title="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" alt="Tarte citron, framboise, multi-fruits, myrtille, poire, mais où est donc passé la pomme ?" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/03.jpg" onclick="currentDiv(7)" title="Du materiel de montagne... De l'ancien materiel !" alt="Du materiel de montagne... De l'ancien materiel !" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/04.jpg" onclick="currentDiv(8)" title="La petite salle à manger" alt="La petite salle à manger" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/05.jpg" onclick="currentDiv(9)" title="La planche Blaitière" alt="La planche Blaitière" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/06.jpg" onclick="currentDiv(10)" title="La planche Savoyarde" alt="La planche Savoyarde" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/07.jpg" onclick="currentDiv(11)" title="La salade du Refuge" alt="La salade du Refuge" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/08.jpg" onclick="currentDiv(12)" title="La salade de Mr. Seguin" alt="La salade de Mr. Seguin" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/01.jpg" onclick="currentDiv(13)" title="Nano et Nanesse, les deux ânes du refuge" alt="Nano et Nanesse, les deux ânes du refuge" /></div>
+                                <div class="w3-col s3 m2"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/14.jpg" onclick="currentDiv(14)" title="Oh la belle marmotte !" alt="Oh la belle marmotte !" /></div>
+                                <div class="w3-col s6 m5"><img class="demo w3-opacity w3-hover-opacity-off cursor" src="images/fulls/15.jpg" onclick="currentDiv(15)" title="Panorama du refuge et des montagnes de Chamonix" alt="Panorama du refuge et des montagnes de Chamonix" /></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--                <div class="images">
+                                    <div style="padding-bottom: 75%; position: relative; display: block; height: 0; overflow: hidden;">
+                                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LbhhdUa4ds8" frameborder="0" allowfullscreen style="position: absolute; top: 0; bottom: 0; left: 0;"></iframe>
+                                    </div>
+                                </div>-->
             </div>
-            <a href="#contact" class="button style1 down anchored">Next</a>
+            <a href="#section-contact" class="w3-display-bottommiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-down w3-hide-small w3-hide-medium"><i class="fa fa-chevron-down"></i></a>
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="main style3 secondary">
-            <a href="#gallery" class="button style1 up anchored">Next</a>
-            <div class="content container">
+        <section id="section-contact" class="fullscreen">
+            <a href="#section-gallery"  class="w3-display-topmiddle w3-btn-floating-large w3-white w3-text-theme-action w3-border w3-border-theme-action w3-hover-theme-action w3-hover-border-white btn-up w3-hide-small w3-hide-medium"><i class="fa fa-chevron-up"></i></a>
+            <div class="w3-container w3-center">
                 <header>
                     <h2>Contactez nous</h2>
                 </header>
-                <div class="box container 75%">
-                    <h3>Message</h3>
-                    <p>Nous aimerions vous connaître !</p>
-                    <!-- Contact Form -->
-                    <form method="post" action="mail.php">
-                        <div class="row 50%">
-                            <div class="6u 12u(mobile)"><input type="text" name="name" placeholder="Nom" /></div>
-                            <div class="6u 12u(mobile)"><input type="email" name="email" placeholder="Email" /></div>
-                        </div>
-                        <div class="row 50%">
-                            <div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-                        </div>
-                        <div class="row">
-                            <div class="12u">
-                                <ul class="actions">
-                                    <li><input type="submit" value="Envoyer" /></li>
-                                </ul>
+                <div class="w3-row">
+                    <div class="w3-half">
+                        <h3>Message</h3>
+                        <p>Nous aimerions vous connaître !</p>
+                        <!-- Contact Form -->
+                        <form method="post" action="mail.php" class="w3-container">
+                            <div class="w3-row-padding">
+                                <div class="w3-half">
+                                    <input class="w3-input w3-border" type="text" name="name" placeholder="Nom" />
+                                </div>
+                                <div class="w3-half">
+                                    <input class="w3-input w3-border" type="email" name="email" placeholder="Email" />
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    <h3>Itinéraire depuis :</h3>
-                    <div data-example-id="togglable-tabs">
-                        <ul id="routeTabs" class="nav nav-tabs" role="tablist" style="height: 46px;">
-                            <li role="presentation" class="active"><button class="button-reset" href="#from-plan" role="tab" id="home-tab" data-toggle="tab" aria-controls="home" aria-expanded="true">le Plan de l'Aiguille</button></li>
-                            <li role="presentation"><button class="button-reset" href="#from-montenvers" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">le sommet du Montenvers</button></li>
-                            <li role="presentation"><button class="button-reset" href="#from-aiguille-grand-bois" role="tab" id="profile-tab"  data-toggle="tab" aria-controls="profile" >la gare de l'Aiguille du Midi via Grand Bois</button></li>
-                            <li role="presentation"><button class="button-reset" href="#from-aiguille-pre-rocher" id="profile-tab" role="tab" data-toggle="tab" aria-controls="profile">la gare de l'Aiguille du Midi via le Pré du Rocher</button></li>
-                        </ul>
-                        <div id="routeTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="from-plan" aria-labelledBy="home-tab">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d2776.3865739060775!2d6.881633865787821!3d45.903580412037705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s45.901543%2C+6.884969!3m2!1d45.901543!2d6.884969!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463504251255" height="600" style="border:0; width: 100%" allowfullscreen></iframe>
-                                <div class="difficulty">
-                                    <div class="easy">
-                                        <div class="label">Facile</div>
+                            <div class="w3-padding">
+                                <textarea class="w3-input w3-border" name="message" placeholder="Message" rows="6"></textarea>
+                            </div>
+                            <p>
+                                <input class="w3-btn w3-theme-action" type="submit" value="Envoyer" />
+                            </p>
+                        </form>
+
+                        <h3>Informations</h3>
+                        <p>
+                            Du 01/05/<span class="year"></span> au 01/11/<span class="year"></span>, tous les jours, refuge gardé.<br />
+                            Du 02/11/<span class="year"></span> au 30/04/<span class="next-year"></span>, tous les jours, refuge non gardé avec lits et couvertures.
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker w3-large" style="width: 30px"></i>118 chemin des Lanchers, 74400 Chamonix Mont Blanc<br/>
+                            <i class="fa fa-envelope w3-large" style="width: 30px"></i><a href="mailto:claudius74@hotmail.fr">claudius74@hotmail.fr</a><br/>
+                            <i class="fa fa-mobile w3-large" style="width: 30px"></i>+33 6 65 64 27 53
+                        </p>
+                    </div>
+                    <div class="w3-half">
+                        <h3>Itinéraire depuis :</h3>
+                        <div class="w3-container">
+                            <div id="route-tabs" class="w3-row">
+                                <a href="javascript:void(0)" onclick="openRoute(event, 'from-plan');" class="w3-col m12 l4 route-tablink w3-bottombar w3-border-theme w3-hover-theme-action w3-padding">
+                                    <div>
+                                        le Plan de l'Aiguille
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)" onclick="openRoute(event, 'from-montenvers');" class="w3-col m12 l4 route-tablink w3-bottombar w3-hover-theme-action w3-padding">
+                                    <div>
+                                        le sommet du Montenvers
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)" onclick="openRoute(event, 'from-aiguille-grand-bois');" class="w3-col m12 l4 route-tablink w3-bottombar w3-hover-theme-action w3-padding">
+                                    <div>
+                                        la gare de l'Aiguille du Midi via Grand Bois
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)" onclick="openRoute(event, 'from-aiguille-pre-rocher');" class="w3-col m12 l4 route-tablink w3-bottombar w3-hover-theme-action w3-padding">
+                                    <div>
+                                        la gare de l'Aiguille du Midi via le Pré du Rocher
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="from-plan" class="route" style="display: block;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d2776.3865739060775!2d6.881633865787821!3d45.903580412037705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s45.901543%2C+6.884969!3m2!1d45.901543!2d6.884969!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463504251255" allowfullscreen></iframe>
+                                <div class="w3-progress-container">
+                                    <div class="w3-progressbar w3-theme-l2" style="width: 25%">
+                                        <div class="w3-center">Facile</div>
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="from-montenvers" aria-labelledBy="profile-tab">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d22204.87327722577!2d6.882651133719504!3d45.91912351818934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s45.931753%2C+6.917561!3m2!1d45.931753!2d6.917561!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463504118172" height="600" style="border:0; width: 100%" allowfullscreen></iframe>
-                                <div class="difficulty">
-                                    <div class="medium">
-                                        <div class="label">Moyen</div>
+                            <div id="from-montenvers" class="route">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d22204.87327722577!2d6.882651133719504!3d45.91912351818934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m4!2s45.931753%2C+6.917561!3m2!1d45.931753!2d6.917561!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463504118172" allowfullscreen></iframe>
+                                <div class="w3-progress-container">
+                                    <div class="w3-progressbar w3-theme" style="width: 50%">
+                                        <div class="w3-center">Moyen</div>
                                     </div>
                                 </div>
                                 <p> <strong>Attention</strong> : la durée indiquée ne tient pas compte du degré de pente et de la difficulté du terrain, comptez plutôt 2 heures. </p>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="from-aiguille-grand-bois" aria-labelledBy="profile-tab">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d7851.877687021224!2d6.870820102256348!3d45.910150624115595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m5!1s0x47894e704c21f359%3A0xefd277ff235dc0c8!2s66+Place+de+l&#39;Aiguille+du+Midi%2C+74400+Chamonix-Mont-Blanc!3m2!1d45.9183872!2d6.8701959!4m3!3m2!1d45.9056062!2d6.8821695!5e0!3m2!1sfr!2sfr!4v1467202821476" height="600" style="border:0; width:100%" allowfullscreen></iframe>
-                                <div class="difficulty">
-                                    <div class="hard">
-                                        <div class="label">Difficile</div>
+                            <div id="from-aiguille-grand-bois" class="route">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d7851.877687021224!2d6.870820102256348!3d45.910150624115595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m5!1s0x47894e704c21f359%3A0xefd277ff235dc0c8!2s66+Place+de+l&#39;Aiguille+du+Midi%2C+74400+Chamonix-Mont-Blanc!3m2!1d45.9183872!2d6.8701959!4m3!3m2!1d45.9056062!2d6.8821695!5e0!3m2!1sfr!2sfr!4v1467202821476" allowfullscreen></iframe>
+                                <div class="w3-progress-container">
+                                    <div class="w3-progressbar w3-theme-d2" style="width: 75%">
+                                        <div class="w3-center">Difficile</div>
                                     </div>
                                 </div>
                                 <p> <strong>Attention</strong> : la durée indiquée ne tient pas compte du degré de pente et de la difficulté du terrain, comptez plutôt 3 à 4 heures. </p>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="from-aiguille-pre-rocher" aria-labelledBy="profile-tab">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d7851.505678184965!2d6.875356245303402!3d45.91278024259014!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d45.9182139!2d6.8700972!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463503636444" height="600" style="border:0; width:100%" allowfullscreen></iframe>
-                                <div class="difficulty">
-                                    <div class="harder">
-                                        <div class="label">Très difficile</div>
+                            <div id="from-aiguille-pre-rocher" class="route">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d7851.505678184965!2d6.875356245303402!3d45.91278024259014!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d45.9182139!2d6.8700972!4m5!1s0x47894ef53c12895d%3A0x5e79a89d3e4d7083!2sRefuge+du+plan+de+l&#39;aiguille%2C+Unnamed+Rd+74400%2C+Chamonix-Mont-Blanc%2C+France!3m2!1d45.9055752!2d6.8826827999999995!5e0!3m2!1sfr!2sfr!4v1463503636444" allowfullscreen></iframe>
+                                <div class="w3-progress-container">
+                                    <div class="w3-progressbar w3-theme-d4" style="width: 90%">
+                                        <div class="w3-center">Très difficile</div>
                                     </div>
                                 </div>
                                 <p> <strong>Attention</strong> : la durée indiquée ne tient pas compte du degré de pente et de la difficulté du terrain, comptez plutôt 3 à 4 heures. </p>
                             </div>
                         </div>
                     </div>
-                    <h3>Informations</h3>
-                    <p>
-                        Du 01/05/<span class="year"></span> au 01/11/<span class="year"></span>, tous les jours, refuge gardé.<br />
-                        Du 02/11/<span class="year"></span> au 30/04/<span class="next-year"></span>, tous les jours, refuge non gardé avec lits et couvertures.
-                    </p>
-                    <ul class="adress-info">
-                        <li><i class="fa fa-map-marker"></i><span>118 chemin des Lanchers, 74400 Chamonix Mont Blanc</span></li>
-                        <li><i class="fa fa-mobile"></i><span>+33 6 65 64 27 53</span></li>
-                    </ul>
-
                 </div>
             </div>
         </section>
 
-        <!-- Partners -->
-        <section style="background-color: #C62828; margin-bottom: -1em">
-            <div style="verical-align: center">
-                <ul class="actions" style="text-align: center; padding-top: 10px;">
-                    <li><a href="http://www.callchef.fr/"><img src="images/partners/callchef.png"/></a></li>
-                    <li><a href="http://www.camptocamp.org/"><img src="images/partners/camptocamp.png"/></a></li>
-                    <li><a href="http://chamonix-meteo.com/"><img src="images/partners/chamonix-meteo.png"/></a></li>
-                    <li><a href="http://www.chamonix.com/"><img src="images/partners/chamonix.png"/></a></li>
-                    <li><a href="http://www.compagniedumontblanc.fr/"><img src="images/partners/compagniedumontblanc.png"/></a></li>
-                    <li><a href="http://sports.gouv.fr/"><img src="images/partners/sportsgouv.png"/></a></li>
-                </ul>
-            </div>
-        </section>
-
         <!-- Footer -->
-        <footer id="footer">
-
-            <!-- Icons -->
-            <ul class="actions">
-                <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
-                <li><a href="https://www.facebook.com/refugeduplan/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <!--<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>-->
-                <!--<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-                <!--<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
-                <!--<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
-            </ul>
-
-            <!-- Menu -->
-            <ul class="menu">
-                <li>&copy; 2016 Refuge du Plan de l'Aiguille</li><li>Design: refuge-plan-aiguille.com's design is a derivative of <a href="http://html5up.net/big-picture">Big Picture</a> by <a href="http://html5up.net">HTML5 UP</a> used under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></li>
-            </ul>
+        <footer id="footer" class="w3-theme w3-padding-32 w3-center">
+            <div class="partners w3-center w3-padding">
+                <a href="http://www.callchef.fr/"><img src="images/partners/callchef.png" alt="callchef"/></a>
+                <a href="http://www.camptocamp.org/"><img src="images/partners/camptocamp.png" alt="camp to camp"/></a>
+                <a href="http://chamonix-meteo.com/"><img src="images/partners/chamonix-meteo.png" alt="chamonix meteo"/></a>
+                <a href="http://www.chamonix.com/"><img src="images/partners/chamonix.png" alt="chamonix"/></a>
+                <a href="http://www.compagniedumontblanc.fr/"><img src="images/partners/compagniedumontblanc.png" alt="compagnie du mont blanc"/></a>
+                <a href="http://sports.gouv.fr/"><img src="images/partners/sportsgouv.png" alt="sports gouv"/></a>
+            </div>
+            <p>
+                <a href="https://www.facebook.com/refugeduplan/" class="w3-hover-text-theme-action w3-xlarge"><i class="fa fa-facebook-official"></i></a>
+            </p>
+            <p>
+                <span>&copy; 2016-<span class="year"></span> Refuge du Plan de l'Aiguille</span>
+            </p>
         </footer>
 
         <!-- schema -->
@@ -886,18 +948,9 @@
 
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/transition.js"></script>
-        <script src="assets/js/tab.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/jquery.poptrox.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/carousel.js"></script>
+        <script src="assets/js/jquery.parallax-1.1.3.js"></script>
         <script src="assets/js/main.js"></script>
-        <script src="assets/js/refuge-plan-aiguille.js"></script>
-        <script src="assets/js/event.js"></script>
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -913,7 +966,6 @@
 
             ga('create', 'UA-78259224-1', 'auto');
             ga('send', 'pageview');
-
         </script>
     </body>
 </html>

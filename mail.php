@@ -6,6 +6,7 @@ if (array_key_exists('email', $_POST)) {
     $mail = new PHPMailer;
 
     $mail->SMTPDebug = 0;                               // Enable verbose debug output
+    $mail->Debugoutput = 'html';
 
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'ssl0.ovh.net';  // Specify main and backup SMTP servers
@@ -29,7 +30,9 @@ if (array_key_exists('email', $_POST)) {
         if (!$mail->send()) {
             //The reason for failing to send will be in $mail->ErrorInfo
             //but you shouldn't display errors to users - process the error, log it on your server.
-            $msg = '<p>Désolé, votre message n\'a pas été envoyé, veuillez envoyer votre message directement à mon adresse email ou réessayer plus tard. Vous allez être redirigé automatiquement. Si vous n\'êtes pas redirigé dans 5 secondes, cliquez <a href="http://refuge-plan-aiguille.com">ici</a></p>';
+//            $msg = '<p>Désolé, votre message n\'a pas été envoyé, veuillez envoyer votre message directement à mon adresse email ou réessayer plus tard. Vous allez être redirigé automatiquement. Si vous n\'êtes pas redirigé dans 5 secondes, cliquez <a href="http://refuge-plan-aiguille.com">ici</a></p>';
+            $msg = '<p>Désolé, nous rencontrons actuellement des soucis avec notre formulaire de contact, veuillez envoyer votre message directement à l\'adresse "claudius74@hotmail.fr". Vous allez être redirigé automatiquement. Si vous n\'êtes pas redirigé dans 5 secondes, cliquez <a href="http://refuge-plan-aiguille.com">ici</a></p>'
+                    . '<p>We apologize, we are encountering some problems with the contact form, please send your message to the address "claudius74@hotmail.fr". You will be redirected to the wesite. If you are not redirected within 5 seconds , click <a href = "http://refuge-plan-aiguille.com">here</a></p>';
         } else {
             $msg = '<p>Message envoyé, vous allez être redirigé automatiquement. Si vous n\'êtes pas redirigé dans 5 secondes, cliquez <a href="http://refuge-plan-aiguille.com">ici</a></p>';
         }
